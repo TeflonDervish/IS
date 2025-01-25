@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/style/style.css}">
+</head>
+<body>
+
+    <header>
+        <h1>Экспертная система</h1>
+    </header>
+
+    <main class="top center">
+        <h2>Эта экспертная система предназначена для выбора модема</h2>
+        <div class="image">
+            <p>Вам будет предоставлен набор вопросов предназначеный для определения продукта, который вам необходим, пожалуйста отвечайте честно, все эти ответы предназначены для </p>
+            <img th:src="@{/img/modem.png}" width="400px">
+        </div>
+        <a class="start__button" th:href="@{/question}">Начать</a>
+
+    </main >
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Экспертная система</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+spring:
+    application:
+        name: IS
+
+
+questions:
+    data: src/main/resources/static/questions.json

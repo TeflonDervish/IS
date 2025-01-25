@@ -1,0 +1,29 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/style/style.css}">
+</head>
+<body>
+    
+    <header>
+        <h1>Экспертная система</h1>
+    </header>
+    
+    <main class="top center">    
+        <div class="quiz-container">
+            <h2 th:text="${questionNumber}">Вопрос</h2>
+            <p th:text="${questionText}">Это мой вопрос:</p>
+            <form th:action="@{/submit-answer}" method="POST">
+                <div class="option" th:each="options : ${options}">
+                    <input type="radio" th:id="${options.id}" name="answer" th:value="${options.id}" required>
+                    <label th:for="${options.id}" th:text="${options.text}">Вариант 1</label>
+                </div>
+                <button type="submit">Submit Answer</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
