@@ -12,17 +12,14 @@
 </header>
 <main class="top center">
     <div class="product-list">
-        <div class="product">
-            <div class="product">
+        <div class="product" th:each="modems : ${modems}">
                 <img src="https://c.dns-shop.ru/thumb/st4/fit/320/250/1158baff8f16699755ea8c8f3280cdfa/07187c8832557ae64c6f3ebefc56cd2e9c35eff8d6e2f35325135093fbd575f1.jpg"
                      alt="">
                 <div class="info">
-                    <h3>Название продукта</h3>
-                    <p>20 000</p>
-
+                    <h3 th:text="${modems.name}">Название продукта</h3>
+                    <p th:text="${modems.price}">20 000</p>
                 </div>
                 <a href="#" class="buy-button">Купить сейчас</a>
-            </div>
         </div>
     </div>
     <a class="start__button" th:href="@{/again}">Пройти опрос снова</a>

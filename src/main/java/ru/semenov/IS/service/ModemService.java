@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.semenov.IS.model.Modem;
 import ru.semenov.IS.repository.ModemRepository;
+import ru.semenov.IS.repository.ModemRepositoryNativeQuery;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,8 +15,10 @@ public class ModemService {
 
     private static final Logger log = LoggerFactory.getLogger(ModemService.class);
     private ModemRepository modemRepository;
+    private ModemRepositoryNativeQuery modemRepositoryNativeQuery;
 
-    public ModemService(ModemRepository modemRepository) {
+    public ModemService(ModemRepository modemRepository, ModemRepositoryNativeQuery modemRepositoryNativeQuery) {
+        this.modemRepositoryNativeQuery = modemRepositoryNativeQuery;
         this.modemRepository = modemRepository;
     }
 
@@ -30,7 +32,7 @@ public class ModemService {
 
         log.info(query.substring(0, query.length() - 5));
 
-        return modemRepository.findByCustomCondition(query.substring(0, query.length() - 5));
+        return modemRepositoryNativeQuery.getResults(query.substring(0, query.length() - 5));
     }
 
     public List<Modem> getAll() {

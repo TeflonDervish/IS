@@ -57,6 +57,9 @@ public class MainController {
     private String result(Model model) {
         Map<String, String> result = questionService.getResult();
         List<Modem> modems = modemService.getResult(result);
+
+        model.addAttribute("modems", modems);
+
         return "result";
     }
 
