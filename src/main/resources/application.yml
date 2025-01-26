@@ -1,0 +1,19 @@
+spring:
+    application:
+        name: IS
+    datasource:
+        url: jdbc:postgresql://localhost:5432/is
+        driver-class-name: org.postgresql.Driver
+        username: server
+        password: server
+    jpa:
+        show-sql: true
+        properties:
+            hibernate:
+                format_sql: true
+        hibernate:
+            ddl-auto: create-drop
+
+
+questions:
+    data: src/main/resources/static/questions.json

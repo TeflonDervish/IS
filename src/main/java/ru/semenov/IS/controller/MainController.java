@@ -7,23 +7,28 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import ru.semenov.IS.model.Modem;
 import ru.semenov.IS.model.Question;
+import ru.semenov.IS.service.ModemService;
 import ru.semenov.IS.service.QuestionService;
 
+import java.util.List;
 import java.util.Map;
 
 @Controller
 public class MainController {
 
     private static final Logger log = LoggerFactory.getLogger(MainController.class);
-    private QuestionService questionService;
+    private final QuestionService questionService;
+    private final ModemService modemService;
 
-    public MainController(QuestionService questionService) {
+    public MainController(QuestionService questionService, ModemService modemService) {
         this.questionService = questionService;
+        this.modemService = modemService;
     }
 
     @GetMapping
-    private String main() {
+    private String mainPage() {
         return "index";
     }
 
@@ -50,6 +55,8 @@ public class MainController {
 
     @GetMapping("/result")
     private String result(Model model) {
+        Map<String, String> result = questionService.getResult();
+        List<Modem> modems = modemService.getResult(result);
         return "result";
     }
 
@@ -57,6 +64,10 @@ public class MainController {
     private String again() {
         questionService.again();
         return "redirect:/question";
+    }
+
+    public ModemService getModemService() {
+        return modemService;
     }
 
 }

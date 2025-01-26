@@ -3,20 +3,20 @@ package ru.semenov.IS.model;
 
 import java.util.List;
 
-
 public class Question {
 
     private Integer id;
     private String text;
-    private String field;
+    private String fieldName;
     private List<Option> options;
 
-    public String getField() {
-        return field;
+
+    public String getFieldName() {
+        return fieldName;
     }
 
-    public void setField(String field) {
-        this.field = field;
+    public void setFieldName(String fieldName) {
+        this.fieldName = fieldName;
     }
 
     public Integer getId() {

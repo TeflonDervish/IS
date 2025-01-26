@@ -1,7 +1,6 @@
 package ru.semenov.IS.model;
 
 
-import jakarta.persistence.criteria.CriteriaBuilder;
 
 public class Option {
 
