@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import ru.semenov.IS.model.Question;
 import ru.semenov.IS.repository.QuestionRepository;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +17,7 @@ public class QuestionService {
     private static final Logger log = LoggerFactory.getLogger(QuestionService.class);
     private final QuestionRepository questionRepository;
 
-    private final Map<String, String> result;
+    private final List<String> result;
     private Integer currentQuestionId;
     private final List<Question> questions;
 
@@ -24,7 +25,7 @@ public class QuestionService {
         this.questionRepository = questionRepository;
         questions = getQuestions();
         currentQuestionId = 0;
-        this.result = new HashMap<>();
+        this.result = new ArrayList<>();
     }
 
     private List<Question> getQuestions() {
@@ -36,8 +37,7 @@ public class QuestionService {
     }
 
     public void setQuestionAnswer(Integer id) {
-        result.put(questions.get(currentQuestionId).getFieldName(),
-                questions.get(currentQuestionId).getOptions().get(id).getFieldType());
+        result.add(questions.get(currentQuestionId).getOptions().get(id).getFieldType());
 
         currentQuestionId = questions.get(currentQuestionId).getOptions().get(id).getNextQuestionId();
 
@@ -47,7 +47,7 @@ public class QuestionService {
         this.currentQuestionId = 0;
     }
 
-    public Map<String, String> getResult() {
+    public List<String> getResult() {
         return result;
     }
 }

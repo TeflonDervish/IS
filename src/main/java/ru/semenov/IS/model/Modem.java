@@ -13,28 +13,26 @@ public class Modem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private Integer price;
 
     private String connectionType;
 
-    private String wifiCoverageArea;
-    private String connectedDevices;
-    private String internetSpeed;
+    private Integer wifiCoverageArea;
+    private Integer connectedDevices;
+    private Integer internetSpeed;
 
     private String deviceType;
-    private String monthlyTraffic;
+    private Integer monthlyTraffic;
     private String autonomyImportance;
 
     private String performancePreference;
     private String additionalFeatures;
     private String outdoorUsage;
 
-    private String budget;
+    private Integer price;
     private String preferredBrand;
     private String urgency;
     private String warrantyImportance;
     private String limitations;
-
 
     public Long getId() {
         return id;
@@ -52,14 +50,6 @@ public class Modem {
         this.name = name;
     }
 
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
     public String getConnectionType() {
         return connectionType;
     }
@@ -68,27 +58,27 @@ public class Modem {
         this.connectionType = connectionType;
     }
 
-    public String getWifiCoverageArea() {
+    public Integer getWifiCoverageArea() {
         return wifiCoverageArea;
     }
 
-    public void setWifiCoverageArea(String wifiCoverageArea) {
+    public void setWifiCoverageArea(Integer wifiCoverageArea) {
         this.wifiCoverageArea = wifiCoverageArea;
     }
 
-    public String getConnectedDevices() {
+    public Integer getConnectedDevices() {
         return connectedDevices;
     }
 
-    public void setConnectedDevices(String connectedDevices) {
+    public void setConnectedDevices(Integer connectedDevices) {
         this.connectedDevices = connectedDevices;
     }
 
-    public String getInternetSpeed() {
+    public Integer getInternetSpeed() {
         return internetSpeed;
     }
 
-    public void setInternetSpeed(String internetSpeed) {
+    public void setInternetSpeed(Integer internetSpeed) {
         this.internetSpeed = internetSpeed;
     }
 
@@ -100,11 +90,11 @@ public class Modem {
         this.deviceType = deviceType;
     }
 
-    public String getMonthlyTraffic() {
+    public Integer getMonthlyTraffic() {
         return monthlyTraffic;
     }
 
-    public void setMonthlyTraffic(String monthlyTraffic) {
+    public void setMonthlyTraffic(Integer monthlyTraffic) {
         this.monthlyTraffic = monthlyTraffic;
     }
 
@@ -140,12 +130,12 @@ public class Modem {
         this.outdoorUsage = outdoorUsage;
     }
 
-    public String getBudget() {
-        return budget;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setBudget(String budget) {
-        this.budget = budget;
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 
     public String getPreferredBrand() {

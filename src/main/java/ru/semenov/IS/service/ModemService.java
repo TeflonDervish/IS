@@ -22,17 +22,15 @@ public class ModemService {
         this.modemRepository = modemRepository;
     }
 
-    public List<Modem> getResult(Map<String, String> mapOfResult) {
+    public List<Modem> getResult(List<String> list) {
 
         StringBuilder query = new StringBuilder();
 
-        for (String s: mapOfResult.keySet()) {
-            query.append(s).append("='").append(mapOfResult.get(s)).append("' AND ");
+        for (String s: list) {
+            query.append(s).append(" AND ");
         }
 
-        log.info(query.substring(0, query.length() - 5));
-
-        return modemRepositoryNativeQuery.getResults(query.substring(0, query.length() - 5));
+        return modemRepositoryNativeQuery.getResults(query.substring(0, query.length() - 4));
     }
 
     public List<Modem> getAll() {

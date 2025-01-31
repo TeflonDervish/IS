@@ -4,9 +4,9 @@
     "text": "Какой тип подключения вам нужен?",
     "fieldName": "connection_type",
     "options": [
-      { "id": 0, "text": "Домашний интернет.", "nextQuestionId": 1, "fieldType": "home" },
-      { "id": 1, "text": "Мобильный интернет.", "nextQuestionId": 4, "fieldType": "mobile" },
-      { "id": 2, "text": "Я не уверен.", "nextQuestionId": 7, "fieldType": "notSure" }
+      { "id": 0, "text": "Домашний интернет.", "nextQuestionId": 1, "fieldType": "connection_type = 'home'" },
+      { "id": 1, "text": "Мобильный интернет.", "nextQuestionId": 4, "fieldType": "connection_type = 'mobile'" },
+      { "id": 2, "text": "Я не уверен.", "nextQuestionId": 7, "fieldType": "true" }
     ]
   },
   {
@@ -14,9 +14,9 @@
     "text": "Какую площадь вы хотите покрыть Wi-Fi сигналом?",
     "fieldName": "wifi_coverage_area",
     "options": [
-      { "id": 0, "text": "До 50 кв.м.", "nextQuestionId": 2, "fieldType": "lessThan50" },
-      { "id": 1, "text": "50–150 кв.м.", "nextQuestionId": 2, "fieldType": "between50to150" },
-      { "id": 2, "text": "Больше 150 кв.м.", "nextQuestionId": 2, "fieldType": "moreThan150" }
+      { "id": 0, "text": "До 100 кв.м.", "nextQuestionId": 2, "fieldType": "wifi_coverage_area < 100" },
+      { "id": 1, "text": "100–200 кв.м.", "nextQuestionId": 2, "fieldType": "wifi_coverage_area between 100 and 200" },
+      { "id": 2, "text": "Больше 200 кв.м.", "nextQuestionId": 2, "fieldType": "wifi_coverage_area > 200" }
     ]
   },
   {
@@ -24,9 +24,9 @@
     "text": "Сколько устройств будет подключено одновременно?",
     "fieldName": "connected_devices",
     "options": [
-      { "id": 0, "text": "До 5.", "nextQuestionId": 3, "fieldType": "under5" },
-      { "id": 1, "text": "5–15.", "nextQuestionId": 3, "fieldType": "between5to15" },
-      { "id": 2, "text": "Больше 15.", "nextQuestionId": 3, "fieldType": "moreThan15" }
+      { "id": 0, "text": "До 30.", "nextQuestionId": 3, "fieldType": "connected_devices < 30" },
+      { "id": 1, "text": "30–75.", "nextQuestionId": 3, "fieldType": "connected_devices between 30 and 75" },
+      { "id": 2, "text": "Больше 75.", "nextQuestionId": 3, "fieldType": "connected_devices > 75" }
     ]
   },
   {
@@ -34,9 +34,9 @@
     "text": "Какой тип скорости интернета вам нужен?",
     "fieldName": "internet_speed",
     "options": [
-      { "id": 0, "text": "До 100 Мбит/с.", "nextQuestionId": 10, "fieldType": "under100Mbps" },
-      { "id": 1, "text": "100–300 Мбит/с.", "nextQuestionId": 10, "fieldType": "between100to300Mbps" },
-      { "id": 2, "text": "Больше 300 Мбит/с.", "nextQuestionId": 10, "fieldType": "moreThan300Mbps" }
+      { "id": 0, "text": "До 2000 Мбит/с.", "nextQuestionId": 10, "fieldType": "internet_speed < 2000" },
+      { "id": 1, "text": "2000–6000 Мбит/с.", "nextQuestionId": 10, "fieldType": "internet_speed between 2000 and 6000" },
+      { "id": 2, "text": "Больше 6000 Мбит/с.", "nextQuestionId": 10, "fieldType": "internet_speed > 6000" }
     ]
   },
   {
@@ -44,9 +44,10 @@
     "text": "Какие устройства вы планируете подключать?",
     "fieldName": "device_type",
     "options": [
-      { "id": 0, "text": "Смартфон/планшет.", "nextQuestionId": 5, "fieldType": "smartphoneTablet" },
-      { "id": 1, "text": "Ноутбук.", "nextQuestionId": 5, "fieldType": "laptop" },
-      { "id": 2, "text": "Мобильный роутер.", "nextQuestionId": 5, "fieldType": "mobileRouter" }
+      { "id": 0, "text": "Смартфон/планшет.", "nextQuestionId": 5, "fieldType": "device_type = 'smartphoneTablet'" },
+      { "id": 1, "text": "Ноутбук.", "nextQuestionId": 5, "fieldType": "device_type = 'laptop'" },
+      { "id": 2, "text": "Мобильный роутер.", "nextQuestionId": 5, "fieldType": "device_type = 'mobileRouter'" },
+      { "id": 3, "text": "Не важно", "nextQuestionId": 5, "fieldType": "true" }
     ]
   },
   {
@@ -54,9 +55,9 @@
     "text": "Какое среднее потребление трафика в месяц?",
     "fieldName": "monthly_traffic",
     "options": [
-      { "id": 0, "text": "До 10 ГБ.", "nextQuestionId": 6, "fieldType": "under10GB" },
-      { "id": 1, "text": "10–50 ГБ.", "nextQuestionId": 6, "fieldType": "between10to50GB" },
-      { "id": 2, "text": "Больше 50 ГБ.", "nextQuestionId": 6, "fieldType": "moreThan50GB" }
+      { "id": 0, "text": "До 10 ГБ.", "nextQuestionId": 6, "fieldType": "monthly_traffic < 10" },
+      { "id": 1, "text": "10–50 ГБ.", "nextQuestionId": 6, "fieldType": "monthly_traffic between 10 and 50" },
+      { "id": 2, "text": "Больше 50 ГБ.", "nextQuestionId": 6, "fieldType": "monthly_traffic > 50" }
     ]
   },
   {
@@ -64,9 +65,9 @@
     "text": "Как важна автономность устройства?",
     "fieldName": "autonomy_importance",
     "options": [
-      { "id": 0, "text": "Очень важна (не менее 8 часов).", "nextQuestionId": 10, "fieldType": "highAutonomy" },
-      { "id": 1, "text": "Средняя важность.", "nextQuestionId": 10, "fieldType": "mediumAutonomy" },
-      { "id": 2, "text": "Не важна.", "nextQuestionId": 10, "fieldType": "lowAutonomy" }
+      { "id": 0, "text": "Очень важна (не менее 8 часов).", "nextQuestionId": 10, "fieldType": "monthly_traffic = 'highAutonomy'" },
+      { "id": 1, "text": "Средняя важность.", "nextQuestionId": 10, "fieldType": "monthly_traffic = 'mediumAutonomy'" },
+      { "id": 2, "text": "Не важна.", "nextQuestionId": 10, "fieldType": "monthly_traffic = 'lowAutonomy'" }
     ]
   },
   {
@@ -74,8 +75,8 @@
     "text": "Вы предпочитаете более доступное или более мощное устройство?",
     "fieldName": "performance_preference",
     "options": [
-      { "id": 0, "text": "Главное – цена.", "nextQuestionId": 8, "fieldType": "priceFirst" },
-      { "id": 1, "text": "Главное – производительность.", "nextQuestionId": 8, "fieldType": "performanceFirst" }
+      { "id": 0, "text": "Главное – цена.", "nextQuestionId": 8, "fieldType": "performance_preference = 'priceFirst'" },
+      { "id": 1, "text": "Главное – производительность.", "nextQuestionId": 8, "fieldType": "performance_preference = 'performanceFirst'" }
     ]
   },
   {
@@ -83,9 +84,9 @@
     "text": "Нужны ли вам дополнительные функции?",
     "fieldName": "additional_features",
     "options": [
-      { "id": 0, "text": "Поддержка VPN.", "nextQuestionId": 9, "fieldType": "vpn" },
-      { "id": 1, "text": "Удаленный доступ.", "nextQuestionId": 9, "fieldType": "remoteAccess" },
-      { "id": 2, "text": "Не нужны.", "nextQuestionId": 9, "fieldType": "noAdditionalFeatures" }
+      { "id": 0, "text": "Поддержка VPN.", "nextQuestionId": 9, "fieldType": "performance_preference = 'vpn'" },
+      { "id": 1, "text": "Удаленный доступ.", "nextQuestionId": 9, "fieldType": "performance_preference = 'remoteAccess'" },
+      { "id": 2, "text": "Не нужны.", "nextQuestionId": 9, "fieldType": "performance_preference = 'noAdditionalFeatures'" }
     ]
   },
   {
@@ -93,18 +94,18 @@
     "text": "Будете ли вы использовать устройство на улице?",
     "fieldName": "outdoor_usage",
     "options": [
-      { "id": 0, "text": "Да.", "nextQuestionId": 10, "fieldType": "outdoor" },
-      { "id": 1, "text": "Нет.", "nextQuestionId": 10, "fieldType": "indoor" }
+      { "id": 0, "text": "Да.", "nextQuestionId": 10, "fieldType": "outdoor_usage = 'outdoor'" },
+      { "id": 1, "text": "Нет.", "nextQuestionId": 10, "fieldType": "outdoor_usage = 'indoor'" }
     ]
   },
   {
     "id": 10,
     "text": "Ваш бюджет?",
-    "fieldName": "budget",
+    "fieldName": "price",
     "options": [
-      { "id": 0, "text": "До 50$.", "nextQuestionId": 11, "fieldType": "under50" },
-      { "id": 1, "text": "50–150$.", "nextQuestionId": 11, "fieldType": "between50to150" },
-      { "id": 2, "text": "Больше 150$.", "nextQuestionId": 11, "fieldType": "moreThan150" }
+      { "id": 0, "text": "До 100$.", "nextQuestionId": 11, "fieldType": "price < 100" },
+      { "id": 1, "text": "100–200$.", "nextQuestionId": 11, "fieldType": "price between 100 and 200" },
+      { "id": 2, "text": "Больше 200$.", "nextQuestionId": 11, "fieldType": "price > 200" }
     ]
   },
   {
@@ -112,9 +113,9 @@
     "text": "Какой бренд вы предпочитаете?",
     "fieldName": "preferred_brand",
     "options": [
-      { "id": 0, "text": "TP-Link.", "nextQuestionId": 12, "fieldType": "tpLink" },
-      { "id": 1, "text": "Asus.", "nextQuestionId": 12, "fieldType": "asus" },
-      { "id": 2, "text": "Не имеет значения.", "nextQuestionId": 12, "fieldType": "noPreference" }
+      { "id": 0, "text": "TP-Link.", "nextQuestionId": 12, "fieldType": "preferred_brand = 'tpLink'" },
+      { "id": 1, "text": "Asus.", "nextQuestionId": 12, "fieldType": "preferred_brand = 'asus'" },
+      { "id": 2, "text": "Не имеет значения.", "nextQuestionId": 12, "fieldType": "true" }
     ]
   },
   {
@@ -122,8 +123,8 @@
     "text": "Как быстро вам нужно устройство?",
     "fieldName": "urgency",
     "options": [
-      { "id": 0, "text": "Срочно (1-2 дня).", "nextQuestionId": 13, "fieldType": "urgent" },
-      { "id": 1, "text": "Не срочно.", "nextQuestionId": 13, "fieldType": "notUrgent" }
+      { "id": 0, "text": "Срочно (1-2 дня).", "nextQuestionId": 13, "fieldType": "urgency = 'urgent'" },
+      { "id": 1, "text": "Не срочно.", "nextQuestionId": 13, "fieldType": "urgency = 'notUrgent'" }
     ]
   },
   {
@@ -131,9 +132,9 @@
     "text": "Как важна гарантия?",
     "fieldName": "warranty_importance",
     "options": [
-      { "id": 0, "text": "Очень важна.", "nextQuestionId": 14, "fieldType": "highWarranty" },
-      { "id": 1, "text": "Средняя важность.", "nextQuestionId": 14, "fieldType": "mediumWarranty" },
-      { "id": 2, "text": "Не важна.", "nextQuestionId": 14, "fieldType": "lowWarranty" }
+      { "id": 0, "text": "Очень важна.", "nextQuestionId": 14, "fieldType": "warranty_importance = 'highWarranty'" },
+      { "id": 1, "text": "Средняя важность.", "nextQuestionId": 14, "fieldType": "warranty_importance = 'mediumWarranty'" },
+      { "id": 2, "text": "Не важна.", "nextQuestionId": 14, "fieldType": "warranty_importance = 'lowWarranty'" }
     ]
   },
   {
@@ -141,9 +142,9 @@
     "text": "Какие у вас есть ограничения?",
     "fieldName": "limitations",
     "options": [
-      { "id": 0, "text": "Нет электричества в определенных местах.", "nextQuestionId": null, "fieldType": "noElectricity" },
-      { "id": 1, "text": "Требуется работа в удаленных районах.", "nextQuestionId": null, "fieldType": "remoteWork" },
-      { "id": 2, "text": "Нет особых ограничений.", "nextQuestionId": null, "fieldType": "noLimitations" }
+      { "id": 0, "text": "Нет электричества в определенных местах.", "nextQuestionId": null, "fieldType": "limitations = 'noElectricity'" },
+      { "id": 1, "text": "Требуется работа в удаленных районах.", "nextQuestionId": null, "fieldType": "limitations = 'remoteWork'" },
+      { "id": 2, "text": "Нет особых ограничений.", "nextQuestionId": null, "fieldType": "true" }
     ]
   }
 ]
